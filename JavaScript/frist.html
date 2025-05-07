@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자 증가 버튼</title>
+    <style>
+        button{
+            background-color: tomato;
+        }
+    </style>
+</head>
+<body>
+    <!-- 솟자 요소 -->
+    <div id="count">0</div>
+    <!-- 숫자 증가버튼 -->
+    <button>숫자증가</button>
+    <script>
+        // 초기 숫자 값
+        let count = 0;
+        // 숫자 표시 요소 선택
+        const elem = document.querySelector("#count");
+        // 버튼 요소 선택
+        const btn = document.querySelector('button');
+        // 버튼 클릭 시 숫자 증가 이벤트 리스너 추가
+        btn.addEventListener("click",()=>{
+            count++; // 숫자 증가
+            elem.textContent = count; // 증가된 숫자 화면표시
+        });
+    </script>
+</body>
+</html>
