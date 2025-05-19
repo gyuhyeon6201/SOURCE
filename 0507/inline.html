@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //변수 value에 100을 저장 후 alert로 출력
+        let value = 100
+        // alert(value);
+        
+        //저장된 값은 100(value)입니다. 로 출력
+        // alert(`저장된 값은 ${value} 입니다`);
+        
+        //팝업창 효과 => prompt();
+        // let input = prompt();
+        // console.log(input);
+        
+        //사용자에게 값을 입력받아, 출력을 "입력받은 값은 ~~입니다"
+        // let input = prompt();
+        // console.log(`입력받은 값은 ${input}입니다`); // F12 콘솔란에 작성
+        // document.write(`입력받은 값은 ${input}입니다`); // 브라우저 body에 작성
+
+        let input = prompt("숫자를 입력하세요", "0");
+        document.write(typeof(input), input);
+    </script>
+</body>
+</html>

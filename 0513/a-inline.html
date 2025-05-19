@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인라인스크립트</title>
+    <style>
+        /* *, tag, ID, class, 가상선택자, 요소선택자, 속성 */
+        button{
+            background-color: tomato;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <!-- <button style="border: none;">클릭!</button> -->
+    <!-- <button onclick="alert('팝업메시지')">클릭!</button> -->
+    <button>클릭!</button>
+    <img src="/JavaScript/numberImg/img-1.png" alt="이미지1">
+    <!-- <script src="./2-script.js"></script> -->
+    <script>
+        // imgElem, imgE, $(jQuery)
+        let num = 1;
+        const $img = document.querySelector("img");
+        console.log($img);
+        const imgClick = ()=> {
+            // num++;
+            // if(num>5){
+            //     num=1;
+            // }
+            // $img.src = `/JavaScript/numberImg/img-${num}.png`;
+            $img.src = `/JavaScript/numberImg/img-${(num = num>=5 ? 1:num+1)}.png`;
+        }
+        $img.onclick = imgClick;
+    </script>
+</body>
+</html>

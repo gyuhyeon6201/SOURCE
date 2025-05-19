@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자주 묻는 질문</title>
+  <style>
+    *{ margin: 0; padding: 0;}
+    main{
+      margin: 20px;
+    }
+    #question{
+      background-color: #333;
+      color: #eee;
+      padding: 20px;
+      font-weight: bolder;
+      cursor: pointer;
+    }
+    #answer{
+      padding: 20px;
+      background-color: #999; 
+    }
+  </style>
+</head>
+<body>
+  <h1>자주 묻는 질문</h1>
+  <main>
+    <p id="question">Q.멤버십을 해지하려면 어떻게 하나요?</p>
+    <div id="answer" style="display: none">A.부담없이 간편하게 멤버십 해지를 하십시요.</div>
+  </main>
+  <script>
+    const qElem = document.querySelector("#question");
+    const aElem = document.querySelector("#answer");
+    qElem.addEventListener("click",()=>{
+      //A답변이 보여주기
+      // aElem.style.display = "block";
+      // aElem.style.display = aElem.style.display === 'none' ? 'block':'none';
+      // if( aElem.style.display === "none" ){
+      //   aElem.style.display = "block";
+      // } else {
+      //   aElem.style.display = "none";
+      // }
+      switch(aElem.style.display){
+        case "none" :
+          aElem.style.display = "block";
+          break;
+        case "block" :
+          aElem.style.display = "none";
+          break;
+      }
+    });
+  </script>
+</body>
+</html>

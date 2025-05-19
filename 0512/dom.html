@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1 id="title">DOM구조</h1>
+    <button>클릭</button>
+    <button>처음</button>
+    <p class="txt" onclick="changeText()">문단을 입력합니다</p>
+    <script>
+        // id가 "title"인 h1 요소를 선택
+        // const h1elem = document.getElementById('title');
+        // console.log(h1elem); // h1 요소를 콘솔에 출력
+        // console.dir(h1elem); // h1 요소의 속성을 콘솔에 출력
+        // console.log(typeof(h1elem)); // h1 요소의 데이터 타입 출력
+        // console.log(h1elem.id); // h1 요소의 id 속성 출력
+        // console.log(h1elem.innerText); // h1 요소의 텍스트 내용 출력
+        // h1elem.innerText = "<i>기울이기추가</i>"; // 텍스트 내용 변경 (HTML 태그는 적용되지 않음)
+        // h1elem.innerHTML = "<i>기울이기추가</i>"; // HTML 태그를 포함하여 내용 변경
+        // h1elem.textContent = "<i>기울이기추가</i>"; // 텍스트 내용 변경 (HTML 태그는 적용되지 않음)
+
+        // 태그 이름이 "button"인 모든 요소를 선택
+        // const btnElem = document.getElementsByTagName("button");
+        // console.log(btnElem[0]); // 첫 번째 버튼 요소를 콘솔에 출력
+
+        // id가 "title"인 요소를 선택
+        // const titleElem = document.querySelector("#title");
+        // console.log(titleElem); // 선택한 요소를 콘솔에 출력
+
+        // 첫 번째 "button" 태그를 선택
+        // const buttonElem = document.querySelector("button");
+        // console.log(buttonElem); // 선택한 버튼 요소를 콘솔에 출력
+
+        // 클래스 이름이 "txt"인 모든 요소를 선택
+        // const pElem = document.getElementsByClassName("txt");
+        // console.log(pElem[0]); // 첫 번째 문단 요소를 콘솔에 출력
+
+        // 클래스 이름이 "txt"인 첫 번째 요소를 선택
+        const pElem = document.querySelector(".txt");
+        console.log(pElem); // 선택한 문단 요소를 콘솔에 출력
+        // pElem.style.color = "blue"; // 문단의 텍스트 색상을 파란색으로 변경
+
+        // 문단의 텍스트 색상을 파란색으로 변경하는 함수
+        const changeText = ()=>{
+            pElem.style.color = "blue"; // 문단의 텍스트 색상을 파란색으로 변경
+        }
+    </script>
+</body>
+</html>

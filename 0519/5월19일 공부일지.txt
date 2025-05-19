@@ -1,0 +1,18 @@
+... : 전개구문(배열값만 가져오기)
+
+PointerEvent 효과
+target은 이벤트가 발생된 객체를 의미
+
+
+공개정보를 가져올때는 json방식(아래와 같이 배열안에 객체 형식)의 파일을 사용함
+const products = [
+    {id:1, prodName: "상품 A", price: 10000},
+    {id:2, prodName: "상품 B", price: 20000},
+    {id:3, prodName: "상품 C", price: 15000}
+];
+
+
+계산기
+
+숫자와 연산자 입력
+그리드 이용하기

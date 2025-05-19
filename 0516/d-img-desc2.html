@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 설명 보기</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{
+            margin: 5rem;
+            display: flex;
+            justify-content: center;
+            background-color: #fff;
+        }
+        main{
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background-color: #fff;
+            padding: 2rem;
+            box-shadow: 0 0 10px #ccc;
+        }
+        main>button{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgb(37, 70, 64);
+            color: aliceblue;
+        }
+        main>div{
+            width: 300px;
+        }
+        main>div>img{
+            width: 100%;
+        }
+        main>div>p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <button class="prev">◀</button>
+        <div>
+            <img src="./sleepingImg/sleeping-1.jpeg" alt="잠만보">
+            <p>손 흔드는 잠만보</p>
+        </div>
+        <button class="next">▶</button>
+    </main>
+    <script src="d-img-desc2.js"></script>
+</body>
+</html>

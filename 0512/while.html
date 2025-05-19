@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while문 실행</title>
+</head>
+<body>
+    <script>
+        // 사용자로부터 값을 입력받아 출력하다가 q가 입력되면 반복 중단
+        // 반복 : 값을 입력, 입력받을 값을 출력
+        // 변경 : 입력값
+        /*
+        let input = '';
+        while( input !== 'q' ){
+            //반복되는 문장
+            input = prompt("계속하려면 값을 입력하세요: q입력시 종료");
+        }
+        document.write( "입력을 종료하였습니다." );
+        */
+
+        /** */
+
+        // 숫자 맞추기 게임
+        // 사용자가 비밀 숫자 맞추기
+        // 반복 : 사용자가 값을 입력 > secret 변화와 비교
+        // 변경 : 사용자가 값
+        /*
+        let secret = 7;
+        let input = ''; //undefined
+        while( secret != input ){
+            input = prompt( '1~10사이의 숫자를 맞춰보세요' );
+        }
+        document.write( "정답입니다." );
+        */
+
+        // do-while
+        // 비밀번호 사용한테 입력 받아서 로그인
+        /*
+        const PWD = "1234";
+        let input;
+        do{
+            input = prompt( "비밀번호를 입력하세요" );
+        } while( PWD !== input );
+        document.write( "접속성공" );
+        */
+        /*
+        let answer = 'no';
+        while( answer === 'yes' ){
+            alert( "while실행" );
+            answer = prompt( "계속하려면 yes" );
+        }
+        */
+
+        do{
+            alert( "do-while문 실행" );
+            answer = prompt( "게속하려면 yes" );
+        }while(answer === 'yes');
+
+    </script>
+</body>
+</html>

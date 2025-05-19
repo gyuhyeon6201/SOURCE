@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 설명 보기</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        main{
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        main>div{
+            width: 300px;
+        }
+        main>div>img{
+            width: 100%;
+        }
+        main>div>p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <button class="prev">이전</button>
+        <div>
+            <img src="/JavaScript/numberImg/img-1.png" alt="이미지1">
+            <p>이미지1 설명입니다</p>
+        </div>
+        <button class="next">다음</button>
+    </main>
+    <script src="d-img-desc.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+style(=css)
+*, tag, ID, class, 가상선택자, 요소선택자, 속성
+
+
+
+const popupBox = ()=>{
+    alert("팝업표시");
+}
+btnElem.onclick = popupBox();
+--> btnElem.onclick = popupBox;
+
+popupBox()는 설정한 함수를 즉시 실행하라는 의미이므로
+()를 붙이지 않아야  onclick으로 실행 가능
+따라서 btnElem.addEventListener("click",popupBox); 코드를 사용함
+
+
+함수() : 체크필수
+
+함수선언
+함수호출
+인수 - 호출할때 변수를 가져다 주는 것, 매개변수 - 함수(){};에서 ()안에 들어가는 항목
+return 반환문
+
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 물건의 결제 금액을 계산합니다.
+    -물건의 수량 입력받기
+    -물건1개의 금액을 입력받기
+    -수량*금액
+    -결제 금액을 화면에 출력 -->
+
+    <!-- 1. 물건의 수량 입력 받기 -->
+    <input type="number" placeholder="수량" id="count">
+    <!-- 2. 물건 1개의 금액 입력 받기 -->
+    <input type="number" placeholder="금액" id="price">
+    <button onclick="calc()">결제 금액 계산<!-- (곱하기) --></button>
+    <p id="result">금액:</p>
+    <script>
+        // console.log( document.querySelector("#count"));
+        const calc = ()=>{
+            // 3. input 정보 가져오기
+            const count = document.querySelector("#count");
+            const price = document.querySelector("#price").value;
+            // 4. 수량과 금액 곱하기
+            const result = Number(count.value) * Number(price);
+            // 5. 결과 출력
+            const pElem = document.querySelector("p");
+            pElem.textContent = `금액: ${result}원`;
+        }
+    </script>
+</body>
+</html>

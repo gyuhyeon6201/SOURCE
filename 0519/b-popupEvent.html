@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        main{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+        main>img{
+            width: 300px;
+        }
+        div.popup{
+            display: none;
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0,0,0,0.6);
+        }
+        div.popup>img{
+            width: 600px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        div.popup>button{
+            outline: none;
+            border: none;
+            padding: 1rem;
+            font-size: 1.5rem;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- <button>클릭</button>
+    <script>
+        const elem = document.querySelector("button"); // 첫 번째 button 요소를 선택하여 elem 변수에 저장
+        console.log(elem); // 선택된 button 요소를 콘솔에 출력
+        elem.addEventListener("click", (evn)=>{ // 버튼에 클릭 이벤트 리스너 추가
+        alert("마우스 클릭!"); // 버튼 클릭 시 알림창 표시
+            console.log(evn.target); // 클릭 이벤트가 발생한 대상(버튼)을 콘솔에 출력
+            // evn.target은 이벤트가 발생한(클릭된) 요소(대상)를 의미
+        })
+    </script> -->
+    <main>
+        <img src="/JavaScript/numberImg/img-1.png" alt="이미지1">
+        <img src="/JavaScript/numberImg/img-2.png" alt="이미지2">
+        <img src="/JavaScript/numberImg/img-3.png" alt="이미지3">
+    </main>
+    <div class="popup">
+        <img src="/JavaScript/numberImg/img-1.png" alt="팝업이미지">
+        <button>X</button>
+    </div>
+    <script>
+        // const imgElem = document.querySelectorAll('main>img'); // main 태그 안의 모든 img 요소를 선택하여 imgElem에 저장 (NodeList)
+        // imgElem.forEach((item)=>{ // 각 img 요소(item)에 대해 반복
+        //     item.addEventListener("click", (e)=>{ // 각 이미지에 클릭 이벤트 리스너 추가
+        //         console.log(item.src); // 클릭된 이미지의 src 속성을 콘솔에 출력
+        //         console.log(e.target); // 클릭 이벤트가 발생한 실제 요소(이미지)를 콘솔에 출력
+        //     });
+        // });
+
+        const mainElem = document.querySelector("main"); // main 태그 요소를 선택하여 mainElem에 저장
+        // const imgElem = mainElem.querySelectorAll("main>img"); // main 내부의 모든 img 요소를 선택하여 imgElem에 저장 (NodeList)
+        // console.log(mainElem.children); // main 요소의 자식 요소들을 콘솔에 출력
+        const popupElem = document.querySelector("div.popup"); // div.popup 태그 요소를 선택하여 popupElem 저장
+        const popupImg = document.querySelector("div.popup>img"); // div.popup>img 태그 요소를 선택하여 popupImg 저장
+        const closeBtm = document.querySelector("div.popup>button"); // div.popup>button 태그 요소를 선택하여 closeBtm 저장
+        mainElem.addEventListener("click", (e)=>{ // main 영역에 클릭 이벤트 리스너 추가
+            // console.log("main click"); // main이 클릭되었을 때 로그
+            console.log(e.target.src); // 클릭된 요소의 src 속성을 콘솔에 출력 (현재는 문자열만 출력, 실제 값은 e.target.src로 해야 함)
+            popupImg.src = e.target.src; // 클릭된 이미지의 src 값을 popupImg의 src로 설정하여 팝업에 큰 이미지로 표시
+            popupElem.style.display = "block"; // 팝업창을 화면에 보이도록 display 속성을 "block"으로 변경
+        });
+        closeBtm.addEventListener("click",()=>{ // 닫기 버튼에 클릭 이벤트 리스너 추가
+            popupElem.style.display = "none";  // 닫기 버튼 클릭 시 팝업창을 숨김
+        });
+    </script>
+</body>
+</html>

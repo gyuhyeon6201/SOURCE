@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=ㅂ, initial-scale=1.0">
+  <title>이미지변경</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    main{
+      width: 300px;
+      margin: 100px auto;
+    }
+    main > img{
+      width: 100%;
+    }
+    main > div{
+      display: flex;
+      gap: 10px;
+    }
+    main > div > button{
+      flex: 1;
+      padding: 20px 0;
+      font-size: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <main>
+    <img src="/JavaScript/numberImg/img-1.png" alt="이미지1">
+    <div>
+      <button data-number="1">1번이미지</button>
+      <button data-number="2">2번이미지</button>
+      <button data-number="3">3번이미지</button>
+    </div>
+  </main>
+  <script>
+    const btnElem = document.querySelectorAll("button");
+    const imgElem = document.querySelector("img");
+    btnElem.forEach((elem)=>{
+      // console.log(elem);
+      elem.addEventListener("click",()=>{
+        // console.log( elem.textContent );
+        // imgElem.src = `/JavaScript/numberImg/img-${elem.textContent}.png`;
+        //data- 로 시작되는 속성 읽어오기
+        console.log( elem.dataset.number );
+        imgElem.src = `/JavaScript/numberImg/img-${elem.dataset.number}.png`;
+      });
+    });
+  </script>
+</body>
+</html>
