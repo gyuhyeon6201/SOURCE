@@ -1,0 +1,19 @@
+appendChild 자식으로 등록 - 해당 태그의 순서에 따라 요소가 등록됨
+
+기능별로 함수로 묶어 사용
+매개변수가 가장 중요
+
+함수와 객체
+
+cart는 주소값을 가르킴
+
+const cart = [];
+cart[2] = 'a';
+--> 적용가능
+cart = array[];
+--> 적용불가능
+
+
+
+fieldset, legend 태그 조합
+for, id 연결 : 명칭을 눌러도 input에 커서가 깜빡이도록
