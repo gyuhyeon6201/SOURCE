@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>끝말잇기 게임</title>
+</head>
+<body>
+    <p>제시어</p>
+    <div>
+        <span>낱말 입력</span>
+        <input type="text" id="word" placeholder="낱말을 입력하세요">
+        <button>입력</button>
+    </div>
+    <ul>
+        <li>제시어</li>
+    </ul>
+    <script>
+        let keyword = '';
+        const $input = document.querySelector("#word");
+        const $btn = document.querySelector("button");
+        const $p = document.querySelector("p");
+        /**
+         * 낱말 입력하는 input에서 입력값 읽어오기
+         * 입력 버튼을 눌렀을 때와, input에서 enter키를 눌렀을 때
+         */
+
+        $btn.addEventListener("click",()=>{
+            keyword = $input.value.trim();
+            $p.textContent = keyword;
+        });
+        $input.addEventListener("keydown",(e)=>{
+            if(e.key === "Enter"){
+                $btn.click();
+            }
+        });
+
+
+        /**
+          * keyword 값을 p태그에 표시
+          */
+    </script>
+</body>
+</html>

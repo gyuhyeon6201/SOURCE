@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>끝말잇기 게임</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            header > h1 {
+                text-align: center;
+                margin-top: 1rem;
+            }
+            header > .one {
+                font-size: 0.7rem;
+                text-align: right;
+                margin: 0.5rem;
+            }
+            main div {
+                margin: 10px 0;
+            }
+            .view {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>나홀로 끝말잇기</h1>
+            <p class="one">틀리면 알아서 고쳐봐 ㅋㅋ</p>
+        </header>
+        <main>
+            <div class="start">
+                <input type="text" id="start-word" />
+                <button id="start-btn">시작</button>
+            </div>
+            <div class="view">
+                <p>제시어</p>
+                <div>
+                    <span>낱말 입력</span>
+                    <input
+                        type="text"
+                        id="word"
+                        placeholder="낱말을 입력하세요"
+                    />
+                    <button id="btn-input">입력</button>
+                </div>
+                <ul id="wordlist"></ul>
+            </div>
+        </main>
+        <script>
+            // 객체 가져오기
+            const $startInput = document.querySelector("#start-word");
+            const $startBtn = document.querySelector("#start-btn");
+
+            const $input = document.querySelector("#word");
+            const $btn = document.querySelector("#btn-input");
+            const $list = document.querySelector("#wordlist");
+
+            // p태그의 textContent를 변경
+            const changePconstent = (keyword) => {
+                const $p = document.querySelector("main>.view>p");
+                $p.textContent = `제시어 : ${keyword}`;
+            };
+            const createli = (keyword) => {
+                const elemLi = document.createElement("li");
+                elemLi.textContent = keyword;
+                $list.appendChild(elemLi);
+            };
+
+            /**
+             * 시작 버튼을 누르면, 입력값이 있는지 확인하고
+             * 있으면 ul(#wordlist)에 추가
+             */
+
+            const handleStartBtn = () => {
+                const elem = document.querySelector("#start-word").value;
+                if (elem !== "") {
+                    createli(elem);
+                    //
+                    const $view = document.querySelector(".view");
+                    $view.style.display = "block";
+                    const $start = document.querySelector(".start");
+                    $start.style.display = "none";
+                    changePconstent(elem);
+                } else {
+                    alert("제시어를 입력하세요.");
+                    return;
+                }
+            };
+            $startBtn.addEventListener("click", handleStartBtn);
+
+            // 맞는 낱말인지 체크
+            const handleWordInput = () => {
+                const keyword = $input.value.trim();
+                if (keyword === "") {
+                    alert("낱말을 입력하세요");
+                    return;
+                }
+                // 이전 입력 문자
+                const last = $list.lastElementChild.textContent;
+                const lastword = last[last.length - 1];
+                const firstword = keyword[0];
+                // 올바르게 입력 되었는지 체크
+                if (lastword === firstword) {
+                    // 끝말잇기 성공
+                    changePconstent(keyword);
+                    // ul > 마지막 li로 추가
+                    createli(keyword);
+                } else {
+                    // 끝말잇기 실패
+                    alert(`틀렸어요. '${lastword}'로 시작해야 합니다.`);
+                }
+                $input.value = "";
+                $input.focus();
+            };
+
+            /**
+             * 낱말 입력하는 input에서 입력값 읽어오기
+             * 입력 버튼을 눌렀을 때와, input에서 enter키를 눌렀을 때
+             */
+
+            $btn.addEventListener("click", handleWordInput);
+            $input.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") {
+                    handleWordInput();
+                }
+            });
+
+            /**
+             * keyword 값을 p태그에 표시
+             */
+        </script>
+    </body>
+</html>
