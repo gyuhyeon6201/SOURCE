@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <title>이미지 캐러셀</title>
+    </head>
+    <body>
+        <header>
+            <h1>저를 소개합니다.</h1>
+            <nav>
+                <button>About Me</button>
+                <button class="active">Favorites</button>
+                <button>MBTI</button>
+                <button>Dream</button>
+            </nav>
+        </header>
+        <main>
+            <div>
+                <button class="prev">◀</button>
+                <button class="next">▶</button>
+            </div>
+            <section class="card about-me">
+                <h2>About Me</h2>
+                <img src="./images/main_character.png" alt="캐릭터" />
+                <p>
+                    안녕하세요. <br />황규현입니다. <br />저는 어떤사람일까요?
+                    <br />맞춰보세요 :3
+                </p>
+            </section>
+            <section class="card favorites">
+                <h2>Favorites</h2>
+                <ul>
+                    <li>
+                        <p>Color</p>
+                        <img src="./images/color.png" alt="보라색 체크" />
+                    </li>
+                    <li>
+                        <p>Food</p>
+                        <img src="./images/food.png" alt="양배추 떡볶이" />
+                    </li>
+                    <li>
+                        <p>Book</p>
+                        <img src="./images/Book.png" alt="왕은 웃었다" />
+                    </li>
+                    <li>
+                        <p>Animation</p>
+                        <img src="./images/animation.png" alt="귀멸의 칼날" />
+                    </li>
+                </ul>
+            </section>
+            <!-- <section class="card mbti">
+                <h2>MBTI</h2>
+                <img src="./images/MBTI_txt.png" alt="INFP+이미지" />
+                <ul>
+                    <li>#집순이</li>
+                    <li>#노는건 좋지만 기빨려</li>
+                    <li>#침대가 제일 좋아</li>
+                    <li>#기계전공</li>
+                    <li>#운동시작</li>
+                    <li>#요즘은 괴담출근</li>
+                </ul>
+            </section> -->
+            <!-- <section class="card dream">
+                <h2>Dream</h2>
+                <p>Coming Soon!</p>
+            </section> -->
+        </main>
+        <script src="./script/script.js"></script>
+    </body>
+</html>

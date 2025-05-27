@@ -1,0 +1,130 @@
+@charset "utf-8";
+
+:root {
+    --backgroud-color: #ffffff;
+    --main-color: #c2d5f0;
+    --nav-dark-color: #12233b;
+    --font-color-border: #222222;
+    --infp-color: #1d6819;
+    --purple-color: #4f1752;
+    --orange-color: #eb7d69;
+}
+
+@font-face {
+    font-family: "Ownglyph_corncorn-Rg";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2412-1@1.0/Ownglyph_corncorn-Rg.woff2")
+        format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "Ownglyph_corncorn-Rg", sans-serif;
+}
+
+/* header 영역 */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+h1 {
+    margin: 1.5rem;
+    padding-left: 5rem;
+    color: var(--main-color);
+    text-shadow: 0 0 2px #222;
+    font-size: 8rem;
+}
+nav {
+    margin: 0 1rem;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 15px;
+}
+nav > button {
+    padding: 10px;
+    background-color: var(--main-color);
+    font-size: 1rem;
+    font-weight: bolder;
+    border: 3px solid #222;
+    cursor: pointer;
+}
+.active {
+    background-color: var(--nav-dark-color);
+    color: var(--main-color);
+}
+
+/* main 영역 */
+main {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    border: 3px solid #222;
+}
+/* button */
+main > div {
+    display: flex;
+    justify-content: space-between;
+}
+.prev,
+.next {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    position: fixed;
+    z-index: 100;
+    font-size: 2rem;
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.prev {
+    left: 20px;
+}
+.next {
+    right: 20px;
+}
+
+/* section */
+section {
+    height: 600px;
+    width: 450px;
+    background-color: #fff;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* section - card */
+.card {
+    margin: 50px;
+}
+.card > h2 {
+    margin-top: 1rem;
+    border-bottom: 3px solid var(--main-color);
+}
+
+/* section 1 - card about-me */
+.about-me > img {
+    border-radius: 50%;
+    border: 1px solid #222;
+    margin-top: 2rem;
+}
+.about-me > p {
+    margin: 1rem 0;
+}
+
+/* section 2 - card favorites */
+.favorites > ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
